@@ -1,0 +1,28 @@
+user_home
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Page</title>
+</head>
+<body>
+    <h1>Welcome to our Booking Page</h1>
+    <h2>Select a Show:</h2>
+   
+    <div th:each="event : ${events}">
+        <form action ="#" th:action="@{/user/register}" method="post">
+            <input type = "hidden" th:id="${event.id}" th:name="id" th:value="${event.id}" />
+             <input type = "hidden" th:id="${event.required}" th:name="required" th:value="${event.required}" /> 
+            <label th:for="${event.title}" th:text="${event.title}"></label>
+            <label th:for="${event.desc}" th:text="${event.desc}"></label>
+            <label th:for="${event.required}" th:text="${event.required}"></label>
+            <button type="submit">Book Now</button>
+            <br/>
+        </form>
+    </div>
+
+
+   <form action="#" th:action="@{/user/logout}" method="post">
+    <button type="submit">Logout</button>
+   </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event_participants</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+   
+        <div th:each="event : ${regis}">
+            <label th:for="${event.id}" th:text="${event.id}"></label>
+            <label th:for="${event.details}" th:text="${event.details}"></label>
+        </div>
+
+  
+</body>
+</html>

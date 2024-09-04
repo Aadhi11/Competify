@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <div th:each="event : ${events}">
+        <form action ="#" th:action="@{/admin/event_participants}" method="post">
+                <input type = "hidden" th:id="${event.id}" th:name="id" th:value="${event.id}" />
+                <label th:for="${event.id}" th:text="${event.id}"></label>
+                <label th:for="${event.title}" th:text="${event.title}"></label>
+                <label th:for="${event.desc}" th:text="${event.desc}"></label>
+                <label th:for="${event.required}" th:text="${event.required}"></label>
+                <button type="submit">See</button>
+                <br/>
+        </form>
+    </div>
+    </table>
+</body>
+</html>
